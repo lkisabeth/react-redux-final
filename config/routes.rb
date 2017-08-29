@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :stickynotes
+  resources :sticky_notes
 end
