@@ -1,5 +1,3 @@
 Rails.application.routes.draw do
-  get 'sticky_notes/index'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :stickynotes
 end
