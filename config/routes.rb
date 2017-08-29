@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  resources :sticky_notes
+  namespace :api do
+    namespace :v1 do
+      resources :sticky_notes
+    end
+  end
 end
