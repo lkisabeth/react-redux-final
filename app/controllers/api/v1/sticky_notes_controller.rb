@@ -1,7 +1,7 @@
 module Api::V1
   class StickyNotesController < ApplicationController
     def index
-      @stickynotes = StickyNote.all
+      @stickynotes = StickyNote.order("created_at DESC")
       render json: @stickynotes
     end
 
