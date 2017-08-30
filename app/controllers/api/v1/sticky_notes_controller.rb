@@ -4,5 +4,15 @@ module Api::V1
       @stickynotes = StickyNote.all
       render json: @stickynotes
     end
+
+    def create
+      @stickynote = StickyNote.create(stickynote_params)
+      render json: @stickynote
+    end
+
+    private
+
+      def stickynote_params
+        params.require(:stickynote).permit(:title, :body)
   end
 end
