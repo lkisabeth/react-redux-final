@@ -16,6 +16,15 @@ module Api::V1
       render json: @stickynote
     end
 
+    def destroy
+      @stickynote = StickyNote.find(params[:id])
+      if @stickynote.destroy
+        head :no_content, status: :ok
+      else
+        render json: @stickynote.errors, status: :unprocessable_entity
+      end
+    end
+
     private
 
       def stickynote_params
