@@ -10,9 +10,16 @@ module Api::V1
       render json: @stickynote
     end
 
+    def update
+      @stickynote = StickyNote.find(params[:id])
+      @stickynote.update_attributes(stickynote_params)
+      render json: @stickynote
+    end
+
     private
 
       def stickynote_params
         params.require(:stickynote).permit(:title, :body)
+      end
   end
 end
